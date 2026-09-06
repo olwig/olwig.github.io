@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🧻 Tp? 💩</title>
+  <style>
+    :root {
+      color-scheme: dark light;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+      text-align: center;
+      padding: 20px;
+    }
+
+    button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+      background: none;
+      border: 1px solid currentColor;
+      color: inherit;
+      border-radius: 4px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-size: xx-large;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .light-mode {
+      background-color: #ffffff;
+      color: #000000;
+    }
+  </style>
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      const location = window.location.hostname + window.location.pathname.replace(/^\/+/, '');
+      document.getElementById('location').textContent = location.startsWith('www.') ? location : 'www.' + location;
+    });
+  </script>
+</head>
+<body>
+  <h1>Out of toilet paper?</h1>
+  <a style="margin-top: 20px" href="https://papertoilet.com/"><span style="font-size: medium">Tap here!</span> 💩🧻</a>
+  <button onclick="toggleMode()">Dark-/Lightmode</button>
+  <footer>
+    <p>&copy; <span id="currentYear"></span> <span id="location"></span></p>
+  </footer>
+</body>
+</html>
